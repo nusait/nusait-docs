@@ -1,28 +1,27 @@
-## Prepare the first commit
-1. ```mkdir projectname && cd $_```
-2. ```composer create-project laravel/laravel projectname .```
-3. Create database-example.php ```cp app/config/database.php app/config/database-example.php```
-4. Create ldap-example.php ```touch app/config/ldap-example.php```
+##Deploy to the server
+
+### Set up Project Structure
+1. Pull down git repo to ```~/www```
+2. Go to ```~/html```
+3. Make Symbolic Link ```ln -s ../www/projectname/public ./projectname``` (need sudo)
+4. Go back to ```~/www/projectname```
+5. Go to ```app```
+6. Make storage all accessible ```chmod 777 -R storage```
+
+### Set up Server Settings
+7. Go to ```~/html/projectname/public```
+8. Create the right .htaccess file
+9. Create ```database.php``` from ```database-example.php``` in ```app/config```
+10. Create ```ldap.php``` from ```ldap-example.php```
+(if there isn't one, create ldap.php like so...)
 
 ```php
 <?php
 return array(
   'rdn' => 'your rdn string',
-  'password' => 'password'
+  'password' => 'your password',
 );
 ```
-5. Update [.gitignore](https://gist.github.com/howlowck/7b5e66fe41fe7443cbb8#file-gitignore) file
-6. Inside ```bootstrap/start.php``` Update local environment value to 'localhost' (or your other dev paths)
-7. Set up other environment values if necessary
-8. ```composer install```
-9. make sure you can see the page in your browser
-
-## Optional Mailing Configs
-1. Change ```app/config/mail.php``` ```driver``` value to ```mail```
-2. Copy ```mail.php``` to ```app/config/local``` and set up your mail config
-
-## Start Git
-1. In the root of your folder ```git init```
-2. ```git add . ```
-3. ```git status ```
-4. ```git commit -m 'initial commit' ```
+### Load Dependencies
+11. ```composer install``` (!!!)
+12. run migration and seed

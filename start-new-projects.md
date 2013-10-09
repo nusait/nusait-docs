@@ -11,7 +11,7 @@ return array(
   'password' => 'password'
 );
 ```
-5. Update [.gitignore](https://gist.github.com/howlowck/7b5e66fe41fe7443cbb8#file-gitignore) file
+5. Update [.gitignore](https://github.com/nusait/nusait-docs/blob/master/.gitignore) file
 6. Inside ```bootstrap/start.php``` Update local environment value to 'localhost' (or your other dev paths)
 7. Set up other environment values if necessary
 8. ```composer install```
