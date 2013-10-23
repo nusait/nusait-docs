@@ -6,10 +6,10 @@
 
 ```php
 <?php
-return array(
+return [
   'rdn' => 'your rdn string',
   'password' => 'password'
-);
+];
 ```
 5. Update [.gitignore](https://github.com/nusait/nusait-docs/blob/master/.gitignore) file
 6. Inside ```bootstrap/start.php``` Update local environment value to 'localhost' (or your other dev paths)
@@ -26,3 +26,9 @@ return array(
 2. ```git add . ```
 3. ```git status ```
 4. ```git commit -m 'initial commit' ```
+
+## Optional NuAuth Package
+1. If you are going to use LDAP to authenticate users, include our very own NuAuth Package (package readme).
+2. Set up users table
+3. Include Package
+

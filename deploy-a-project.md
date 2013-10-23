@@ -17,10 +17,10 @@
 
 ```php
 <?php
-return array(
+return [
   'rdn' => 'your rdn string',
-  'password' => 'your password',
-);
+  'password' => 'password'
+];
 ```
 ### Load Dependencies
 11. ```composer install``` (!!!)
